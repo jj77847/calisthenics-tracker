@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workout Tracker</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Workout Tracker</h1>
+  <div id="group-creator">
+    <input id="new-group" placeholder="New workout group">
+    <button id="create-group">Create Group</button>
+  </div>
+  <div id="groups"></div>
+
+  <template id="group-template">
+    <div class="group">
+      <h2 class="group-title"></h2>
+      <div class="controls">
+        <button class="view-week">Week</button>
+        <button class="view-month">Month</button>
+      </div>
+      <div class="log-entry">
+        <input class="exercise" placeholder="Exercise">
+        <input type="number" class="reps" placeholder="Reps">
+        <input type="number" class="sets" placeholder="Sets">
+        <button class="add-entry">Log</button>
+      </div>
+      <ul class="entry-list"></ul>
+      <canvas class="chart" width="400" height="200"></canvas>
+      <p class="summary"></p>
+    </div>
+  </template>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Workout Entry</h3>
+      <input id="edit-exercise" placeholder="Exercise">
+      <input id="edit-sets" type="number" placeholder="Sets">
+      <input id="edit-reps" type="number" placeholder="Reps">
+      <div class="modal-actions">
+        <button id="saveEdit">Save</button>
+        <button id="cancelEdit">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
